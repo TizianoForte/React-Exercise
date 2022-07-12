@@ -4,9 +4,9 @@ import { Hello } from "./hello";
 export class App extends React.Component {
   render() {
     return (
-      <div>
+      <h1>
         <Hello />
-      </div>
+      </h1>
     );
   }
 };
