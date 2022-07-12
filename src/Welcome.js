@@ -7,3 +7,6 @@ export class Welcome extends React.Component{
 }
 
 
+Welcome.defaultProps = {
+    name : "Tiziano",
+}
