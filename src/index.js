@@ -10,3 +10,4 @@ root.render(
     </React.StrictMode>
 );
 
+//Praticamente ho anticipato gli esercizi da components 01 al 04 ed ho fatto direttamente il "file" completo.
