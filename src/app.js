@@ -1,15 +1,16 @@
 import React from "react";
-import { Welcome } from "./Welcome";
+import {Welcome} from "./Welcome";
 
 
 
-export class App extends React.Component {
+ class App extends React.Component {
   render() {
     return (
       <div>
-        <Welcome/>
+        <Welcome age={34}/>
       </div>
     );
   }
 };
 
+export default App
