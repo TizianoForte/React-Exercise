@@ -7,7 +7,7 @@ import {Welcome} from "./Welcome";
   render() {
     return (
       <div>
-        <Welcome name={<strong>Erick</strong>}age={25}/> 
+        <Welcome name={<strong>Tiziano</strong>}/> 
       </div>
     );
   }
