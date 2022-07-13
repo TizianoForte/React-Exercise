@@ -7,10 +7,12 @@ import {Welcome} from "./Welcome";
   render() {
     return (
       <div>
-        <Welcome age={34}/>
+        <Welcome name={<strong>Erick</strong>}age={25}/> 
       </div>
     );
   }
 };
 
 export default App
+
+//Penso che l'esercizio richiedesse questo.
