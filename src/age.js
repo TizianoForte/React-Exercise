@@ -1,9 +1,13 @@
 
 import React from "react";
 
-export  function Age (props) {
-    const {age} = props;
-    return <p> Your age is {age}!</p>
+export class Age extends React.Component {
+    render (){
+    return (
+    <div>
+    {this.props.age >= 18 && <p>Your age is {this.props.age}</p>}
+    </div>
+    )
+}
 }
 
-//Ho usato un "componente funzione" per risolvere.
