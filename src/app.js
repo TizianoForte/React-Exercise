@@ -14,4 +14,3 @@ import {Welcome} from "./Welcome";
 export default App
 
 
-//Sinceramente non ho capito cosa chiede l'esercizio...
