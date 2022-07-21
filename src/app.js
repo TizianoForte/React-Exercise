@@ -5,10 +5,13 @@ import {Welcome} from "./Welcome";
   render() {
     return (
       <div>
-        <Welcome name={<strong>Tiziano</strong>}/>
+        <Welcome name={<strong>John</strong>}/>
       </div>
     );
   }
 };
 
 export default App
+
+
+//Sinceramente non ho capito cosa chiede l'esercizio...
