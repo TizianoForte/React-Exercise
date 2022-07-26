@@ -21,8 +21,13 @@ export class Counter extends React.Component {
 
   render() {
     return <div>
-        <h1>Count : {this.state.count}</h1>
+        <CounterDisplay count={this.state.count}/>
     </div>;
   }
 }
-//Funziona.
+
+export class CounterDisplay extends React.Component {
+  render(){
+      return <h1>Count: {this.props.count}</h1>
+  }
+}
