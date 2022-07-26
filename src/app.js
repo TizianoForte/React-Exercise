@@ -7,7 +7,7 @@ import { Counter } from "./Counter";
   render() {
     return (
       <div>
-        <Counter count={34} incrementBy={2} timeout={1500}/>
+        <Counter count={34} incrementBy={2} timeout={1000}/>
       </div>
     );
   }
