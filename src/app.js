@@ -1,11 +1,12 @@
 import React from "react";
-import {Welcome} from "./Welcome";
+import { Count } from "./Count";
+
 
  class App extends React.Component {
   render() {
     return (
       <div>
-        <Welcome name={<strong>John</strong>}/>
+        <Count/>
       </div>
     );
   }
