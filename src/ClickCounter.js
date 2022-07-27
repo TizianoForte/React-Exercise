@@ -1,5 +1,6 @@
 import React from "react";
 
+
 class ClickCounter extends React.Component {
   state = {
     count: 0,
@@ -9,6 +10,9 @@ class ClickCounter extends React.Component {
     this.setState((increment) => {
       return { count: increment.count + 1 };
     });
+
+
+    
   };
   render() {
     return (
