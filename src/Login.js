@@ -8,13 +8,13 @@ export class Login extends React.Component {
   };
 
   handleInputChange = (event) => {
-    const valule = event.target.valule;
+    const value = event.target.value;
     const name = event.target.name;
     const type = event.target.type;
     const checked = event.target.checked;
 
     this.setState({
-      [name]:type === 'checkbox' ? checked : valule,
+      [name]:type === 'checkbox' ? checked : value,
     });
   };
 
@@ -53,4 +53,3 @@ export class Login extends React.Component {
 export default Login;
 
 
-//Nella console del broswer continua a darmi undefined sia il nome che la passw il flag invece funziona.
