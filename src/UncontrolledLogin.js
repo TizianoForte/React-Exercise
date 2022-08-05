@@ -1,6 +1,15 @@
 import React from "react";
+import { createRef } from "react";
 
 export class UncontrolledLogin extends React.Component {
+    _autoFocusRef = createRef()
+
+    componentDidMount(){
+      this._autoFocusRef.current.focus();
+    }
+
+
+
   submit = (event) => {
     event.preventDefault();
 
@@ -16,9 +25,9 @@ export class UncontrolledLogin extends React.Component {
       <div>
         <h3>Uncontrolled Login</h3>
 
-        <form onSubmit={this.submit}>
+        <form   onSubmit={this.submit}>
           <label>Username</label>
-          <input name="username"></input>
+          <input name="username" ref={this._autoFocusRef}></input>
 
           <label>Password</label>
           <input name="password" type="password"></input>
@@ -32,6 +41,8 @@ export class UncontrolledLogin extends React.Component {
           <button name="reset" type="reset">
             Reset
           </button>
+          <button type="button">Prefill Form</button>
+          
         </form>
       </div>
     );
