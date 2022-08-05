@@ -1,5 +1,6 @@
 import React from "react";
 import { Login } from "./Login";
+import { UncontrolledLogin } from "./UncontrolledLogin";
 
 
 class App extends React.Component {
@@ -7,6 +8,7 @@ class App extends React.Component {
     return (
       <div>
         <Login/>
+        <UncontrolledLogin/>
       </div>
     );
   }
