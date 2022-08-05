@@ -1,3 +1,4 @@
+
 import React from "react";
 
 export class Login extends React.Component {
@@ -5,21 +6,22 @@ export class Login extends React.Component {
     username: "",
     password: "",
     remember: false,
-    disabled : true
+    disabled: true
   };
 
-  handleInputChange = (event) => {
+  handleSetChange = (event) => {
     const value = event.target.value;
     const name = event.target.name;
     const type = event.target.type;
     const checked = event.target.checked;
 
+
     this.setState({
-      [name]:type === 'checkbox' ? checked : value,
+      [name]: type === 'checkbox' ? checked : value,
     });
   };
 
-  componentDidUpdate() {
+  componentDidUpdate(){
     console.log(this.state)
   }
 
@@ -31,40 +33,48 @@ export class Login extends React.Component {
     })
   }
 
-
-
+  resetAll = () => {
+    this.setState({
+      username: '',
+      password:'',
+      remember: false,
+      disabled: true
+    })
+  }
 
 
 
   render() {
     return (
       <div>
-        <label>Username :</label>
+        <label>Username</label>
         <input
           name="username"
           value={this.state.username}
-          onChange={this.handleInputChange}
-        ></input><br></br>
-        <label>Password :</label> 
+          onChange={this.handleSetChange}
+        ></input>
+
+        <label>Password</label>
         <input
           name="password"
           type="password"
-          valule={this.state.password}
-          onChange={this.handleInputChange}
-        ></input><br></br>
-        <label>Remember Me:</label>
+          value={this.state.password}
+          onChange={this.handleSetChange}
+        ></input>
+
+        <label>Remember me</label>
         <input
           name="remember"
           type="checkbox"
-          value={this.state.remember}
-          onChange={this.handleInputChange}
+          checked={this.state.remember}
+          onChange={this.handleSetChange}
         ></input>
+        <br/>
         <button name="login" disabled={!(this.state.username && this.state.password)} onClick={this.onLogin}>Login</button>
+        <button name="reset" onClick={this.resetAll}>Reset</button>
       </div>
-    )
+    );
   }
 }
 
-export default Login;
-
-
+export default Login
