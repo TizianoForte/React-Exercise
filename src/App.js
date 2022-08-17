@@ -1,6 +1,6 @@
 import React from "react";
 
-import { TodoList } from "./todolist";
+import TodoList from "./todolist";
 
 
 
