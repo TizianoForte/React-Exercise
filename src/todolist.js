@@ -28,6 +28,12 @@ export  class TodoList extends Component {
         data: [],
       });
     }
+    removeElement = (key) => {
+      const toDelete = this.state.data.filter((item,index) => index !== key);
+      this.setState({
+        data:[...toDelete]
+      });
+    };
     
     render() {
       return (
@@ -38,7 +44,10 @@ export  class TodoList extends Component {
           <button onClick={this.removeTodo}>Reset All</button>
           <ul>
             {this.state.data.map((item, key) => {
-              return <li key={key}>{item.todo}</li>;
+              return <li key={key}>
+                <button onClick={()=>this.removeElement(key)}>Remove</button>
+                
+                {item.todo}</li>;
             })}
             
           </ul>
