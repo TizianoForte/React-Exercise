@@ -1,5 +1,5 @@
 import React from "react";
-import Welcome from "./welcome";
+import Login from "./login";
 
 
 
@@ -9,7 +9,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Welcome/>
+        <Login/>
         
       </div>
     );
