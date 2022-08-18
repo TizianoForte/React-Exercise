@@ -1,6 +1,7 @@
 import React from "react";
+import Welcome from "./welcome";
 
-import TodoList from "./todolist";
+
 
 
 
@@ -8,7 +9,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <TodoList/>
+        <Welcome/>
         
       </div>
     );
