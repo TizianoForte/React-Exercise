@@ -6,7 +6,7 @@ class App extends React.Component {
   
 	render() {
 		return (
-      <Sum numbers={[15,6]}/>
+      <Sum/>
     )
 }
 }
