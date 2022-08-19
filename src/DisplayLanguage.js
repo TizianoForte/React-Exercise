@@ -18,11 +18,12 @@ export class DisplayLanguage extends React.Component {
 				{(language) => {
 					return (
 						<div>
+
 							<select onChange={this.props.onChange}>
 								<option value="en">ENGLISH</option>
 								<option value="it">ITALIANO</option>
 							</select>
-							<h2>{string[language].STRING_TO_DISPLAY}</h2>
+							<h1>{string[language].STRING_TO_DISPLAY}</h1>
 						</div>
 					);
 				}}
