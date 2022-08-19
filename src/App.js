@@ -1,17 +1,33 @@
 import React from "react";
-import { Container } from "./Container";
-
-
-
-
-
+import TodoList from "./Todolist";
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <Container title= "My App"/>
-        
+        <TodoList
+          render={(items, deleteState) => {
+            const itemsCopy = [...items.items];
+            return (
+              <ul className="list">
+                {itemsCopy.map((el, i) => (
+                  <div key={i}>
+                    <li>
+                      <button
+                        onClick={() => {
+                          deleteState(itemsCopy, i);
+                        }}
+                      >
+                        Remove
+                      </button>
+                      {el}
+                    </li>
+                  </div>
+                ))}
+              </ul>
+            );
+          }}
+        />
       </div>
     );
   }
