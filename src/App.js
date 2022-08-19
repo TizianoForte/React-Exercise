@@ -1,36 +1,31 @@
 import React from "react";
-import TodoList from "./Todolist";
+import { DisplayLanguage } from "./DisplayLanguage";
+import { languageContext } from "./LanguageContext";
 
 class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <TodoList
-          render={(items, deleteState) => {
-            const itemsCopy = [...items.items];
-            return (
-              <ul className="list">
-                {itemsCopy.map((el, i) => (
-                  <div key={i}>
-                    <li>
-                      <button
-                        onClick={() => {
-                          deleteState(itemsCopy, i);
-                        }}
-                      >
-                        Remove
-                      </button>
-                      {el}
-                    </li>
-                  </div>
-                ))}
-              </ul>
-            );
-          }}
-        />
-      </div>
-    );
-  }
+  state = {
+		language: "en",
+	};
+
+	handleLenguageChange = (event) => {
+		this.setState({
+			language: event.target.value,
+		});
+		console.log(this.state);
+	};
+
+	onLogin = (state) => console.log(state);
+
+	render() {
+		return (
+			<>
+				<languageContext.Provider value={this.state.language}>
+					<DisplayLanguage onChange={this.handleLenguageChange}/>
+				</languageContext.Provider>
+			</>
+		);
+	}
 }
+
 
 export default App;
