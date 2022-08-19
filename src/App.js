@@ -1,5 +1,6 @@
 import React from "react";
-import { ClickCounter } from "./ClickCounter";
+import Login from "./Login";
+
 
 
 
@@ -7,7 +8,7 @@ class App extends React.Component {
   
 	render() {
 		return (
-      <ClickCounter incrementBy={20}/>
+      <Login />
     )
 }
 }
