@@ -1,9 +1,10 @@
 import React from "react";
-import { GithubUser } from "./GithubUser";
+
+import { GithubUserList } from "./GithubUserList";
 
 class App extends React.Component {
   render() {
-    return <GithubUser username={'TizianoForte'}/>;
+    return <GithubUserList/>;
   }
 }
 
