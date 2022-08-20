@@ -1,13 +1,15 @@
 import React from "react";
 import { ClickCounter } from "./ClickCounter";
 
-
+const onCounterChange =(state) =>{
+  console.log(state)
+}
 
 class App extends React.Component {
   
 	render() {
 		return (
-      <ClickCounter incrementBy={20}/>
+      <ClickCounter onCounterChange={onCounterChange}/>
     )
 }
 }

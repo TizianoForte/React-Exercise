@@ -1,21 +1,21 @@
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 
 
 
-export function ClickCounter({initialCounter = 0, incrementBy = 1}) {
-    const [counter, setCounter] = useState (initialCounter);
+export function ClickCounter({onCounterChange}) {
+    const [count, setCounter] = useState (0);
     
    
    function handleCounterIncrement() {
-      setCounter(c=> c+ incrementBy)
-    }
-
+      setCounter(count +1)
+    };
+useEffect(()=>onCounterChange(count),[count,onCounterChange])
    
         return (
-            <>
-                <h1>Counter: {counter}</h1>
-                <button onClick={handleCounterIncrement}>Increment</button>
-            </>
+            <div>
+                <h1>Counter: {count}</h1>
+                <button onClick={()=>handleCounterIncrement()}>Increment</button>
+            </div>
         )
     
 
