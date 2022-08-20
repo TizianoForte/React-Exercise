@@ -1,17 +1,11 @@
 import React from "react";
-import { ClickCounter } from "./ClickCounter";
 
-const onCounterChange =(state) =>{
-  console.log(state)
-}
+import Counter from "./Counter";
 
 class App extends React.Component {
-  
-	render() {
-		return (
-      <ClickCounter onCounterChange={onCounterChange}/>
-    )
-}
+  render() {
+    return <Counter />;
+  }
 }
 
 export default App;
