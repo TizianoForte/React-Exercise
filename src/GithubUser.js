@@ -1,19 +1,23 @@
-import { useGithubUser } from "./useGithubUser"
 
-export function GithubUser({username='TizianoForte'}){
+import { useGithubUser } from "./useGithubUser";
 
-    const {data, error, loading} = useGithubUser(username);
+export function GithubUser({ username='TizianoForte'}) {
+    const{ user,loading, error, onFetchUser}=useGithubUser(username)
 
-    
-    return(
+    function handleGetUserData (){
+        onFetchUser(username)
+    }
+
+    return (
         <div>
-            {data && <h2>{data.name}</h2>}
-            {data && <img alt="img_profile" src={data.avatar_url}></img>}
-            {data && <h3>{data.location}</h3>}
-            {data && <h5>{data.bio}</h5>}
+            <button onClick={handleGetUserData}>Load User data</button>
             {loading && <h1>Loading...</h1>}
-            {error && <h1>Error!!</h1>}
+            {error && <h1>There has been an error: {error.message}</h1>}
+            <h1>{user?.name}</h1>
+            <p>{user?.login}</p>
+            <p>{user?.location}</p>
+            
         </div>
     )
+
 }
-//non capisco perchè non visualizza il nome.
