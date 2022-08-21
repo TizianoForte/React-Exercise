@@ -1,9 +1,15 @@
 import React from "react";
-import { GithubUser } from "./GithubUser";
+import { CarDetails } from "./CarDetails";
 
+const initialData = {
+  brand: "Mini",
+  model: "Cooper",
+  year: "2000",
+  color: "black",
+}
 class App extends React.Component {
   render() {
-    return <GithubUser/>;
+    return <CarDetails initialData={initialData}/>;
   }
 }
 
