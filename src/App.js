@@ -1,10 +1,9 @@
 import React from "react";
-
-import { GithubUserList } from "./GithubUserList";
+import { HookCounter } from "./HookCounter";
 
 class App extends React.Component {
   render() {
-    return <GithubUserList/>;
+    return <HookCounter/>;
   }
 }
 
