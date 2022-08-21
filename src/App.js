@@ -1,25 +1,15 @@
-import React, { useState } from "react";
-import { DisplayLanguage } from "./DisplayLanguage";
-import { LanguageContext } from "./LanguageContext";
+import React from "react";
+import { ClickCounter } from "./ClickCounter";
+
 
 export function App() {
-  const [language, setLanguage] = useState();
-
-  function handleLanguageChange(event) {
-    setLanguage(event.target.value);
-  }
+  
 
   return (
     <div>
-      <select value={language} onChange={handleLanguageChange}>
-        <option value="en">English</option>
-        <option value="it">Italiano</option>
-      </select>
-
-      <LanguageContext.Provider value={language}>
-        <DisplayLanguage />
-      </LanguageContext.Provider>
+        <ClickCounter/>
     </div>
+   
   );
 }
 
