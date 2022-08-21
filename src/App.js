@@ -1,9 +1,9 @@
 import React from "react";
-import { HookLogin } from "./HookLogin";
+import { GithubUser } from "./GithubUser";
 
 class App extends React.Component {
   render() {
-    return <HookLogin/>;
+    return <GithubUser/>;
   }
 }
 
