@@ -5,6 +5,7 @@ import Counter from "./Counter";
 import ShowGithubUser from "./ShowGithubUser";
 import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
+import NotFound from "./NotFound";
 
 
 
@@ -33,11 +34,15 @@ export default function App() {
           />
           <button onClick={handleNavigate}>USERNAME</button>
         </li>
+        <li>
+          <Link to={"/*"}>Not Found</Link>
+        </li>
       </ul>
       <Routes>
         <Route path="/" element={<Welcome name="Tiziano" />} />
         <Route path="/counter" element={<Counter />} />
         <Route path="users/:username" element={<ShowGithubUser />} />
+        <Route path="/*" element = {<NotFound />}/>
       </Routes>
     </div>
   );
