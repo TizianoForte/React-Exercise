@@ -6,6 +6,7 @@ import ShowGithubUser from "./ShowGithubUser";
 import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
 import NotFound from "./NotFound";
+import { GithubUserList } from "./GitUserList";
 
 
 
@@ -20,7 +21,7 @@ export default function App() {
 
   return (
     <div>
-      <ul>
+      <ul style={{display:"flex", gap:"20px"}}>
         <li>
           <Link to={"/"}>WELCOME</Link>
         </li>
@@ -37,12 +38,20 @@ export default function App() {
         <li>
           <Link to={"/*"}>Not Found</Link>
         </li>
+        
       </ul>
       <Routes>
         <Route path="/" element={<Welcome name="Tiziano" />} />
         <Route path="/counter" element={<Counter />} />
-        <Route path="users/:username" element={<ShowGithubUser />} />
+        <Route path="users" element={<GithubUserList />}>
+          <Route
+            path=":username"
+            element={<ShowGithubUser />}
+          />
+        </Route>
         <Route path="/*" element = {<NotFound />}/>
+        
+        
       </Routes>
     </div>
   );
