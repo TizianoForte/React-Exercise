@@ -8,8 +8,6 @@ import { useState } from "react";
 import NotFound from "./NotFound";
 import { GithubUserList } from "./GitUserList";
 
-
-
 export default function App() {
   const navigate = useNavigate();
 
@@ -21,7 +19,7 @@ export default function App() {
 
   return (
     <div>
-      <ul style={{display:"flex", gap:"20px"}}>
+      <ul style={{ display: "flex", listStyleType: "none", gap: "40px" }}>
         <li>
           <Link to={"/"}>WELCOME</Link>
         </li>
@@ -29,29 +27,28 @@ export default function App() {
           <Link to={"/counter"}>COUNTER</Link>
         </li>
         <li>
+          <Link to={"/users"}>USERS</Link>
+        </li>
+        <li>
           <input
             type="text"
             onKeyUp={(e) => setUsernameValue(e.target.value)}
           />
-          <button onClick={handleNavigate}>USERNAME</button>
+          <button onClick={handleNavigate}  >
+            USERNAME
+          </button>
         </li>
-        <li>
-          <Link to={"/*"}>Not Found</Link>
-        </li>
-        
       </ul>
       <Routes>
-        <Route path="/" element={<Welcome name="Tiziano" />} />
-        <Route path="/counter" element={<Counter />} />
+        <Route path="/" element={<Welcome name="Tiziano" />}/>
+        <Route path="counter" element={<Counter />}/>
         <Route path="users" element={<GithubUserList />}>
-          <Route
-            path=":username"
-            element={<ShowGithubUser />}
-          />
+
+          <Route index element={<h4>Add a user and select it</h4>}/>
+          <Route path=":username" element={<ShowGithubUser />}/>
+
         </Route>
-        <Route path="/*" element = {<NotFound />}/>
-        
-        
+        <Route path="/*" element={<NotFound />} />
       </Routes>
     </div>
   );
