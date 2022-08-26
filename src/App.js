@@ -1,18 +1,16 @@
 import React from "react";
-import { FilteredList } from "./FilteredList";
+import { Route, Routes } from "react-router-dom";
+import Welcome from "./Welcome";
 
 
 
-export function App() {
-  
 
+export default function App() {
   return (
     <div>
-        <FilteredList />
-        
+      <Routes>
+        <Route path="/" element={<Welcome name="Tiziano" />} />
+      </Routes>
     </div>
-   
   );
 }
-
-export default App;
